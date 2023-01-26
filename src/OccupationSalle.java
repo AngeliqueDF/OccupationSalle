@@ -39,6 +39,17 @@ public class OccupationSalle {
         creneaux[indexJour][indexCreneau] = true;
         System.out.println("Le créneau du " + afficherHoraire(indexJour, indexCreneau) + " a été réservé.");
     }
+
+    public static int chiffresPossibles(int longueurTableau) {
+        int res = 1;
+        int ordreGrandeur = 10;
+        while (longueurTableau - 1 >= ordreGrandeur) {
+            res++;
+            ordreGrandeur *= 10;
+        }
+        return res;
+    }
+
     public static void affichageTauxOccupation(boolean[][] occupee) {
         System.out.println("Taux d'occupation : " + (calculerTauxOccupation(occupee) * 100));
         System.out.println();
