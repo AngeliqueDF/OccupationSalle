@@ -9,5 +9,17 @@ public class OccupationSalle {
                 {true, true, false, true, false, true, true, false, true, true},
                 {false, true, false, true, false, true, true, false, false, false}
         };
+        affichageCreneaux(occupee);
     }
-};
+    public static void affichageCreneaux(boolean[][] creneaux) {
+        System.out.println("Affichage des crénaux de la semaine :");
+        for (int i = 0; i < creneaux.length; i++) {
+            System.out.println(joursSemaine[i]);
+            for (int j = 0; j < creneaux[0].length; j++) {
+                System.out.println("\t" + ecrireInfosCreneau(creneaux[i][j], i, j));
+            }
+            System.out.println();
+        }
+    }
+
+}
