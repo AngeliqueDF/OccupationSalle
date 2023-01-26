@@ -11,6 +11,13 @@ public class OccupationSalle {
         };
         affichageCreneaux(occupee);
         affichageTauxOccupation(occupee);
+        try {
+            reserverCreneau(occupee);
+        } catch (ReservationCreneauOccupeException re) {
+            System.out.println(re.getMessage());
+        }
+    }
+
     }
     public static void affichageTauxOccupation(boolean[][] occupee) {
         System.out.println("Taux d'occupation : " + (calculerTauxOccupation(occupee) * 100));
