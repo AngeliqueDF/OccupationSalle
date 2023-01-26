@@ -94,3 +94,9 @@ public class OccupationSalle {
                 + (8 + indexCreneau + 1) + "H00.";
     }
 }
+
+class ReservationCreneauOccupeException extends RuntimeException {
+    ReservationCreneauOccupeException() {
+        super("Erreur : ce créneau n'est pas disponible.");
+    }
+};
