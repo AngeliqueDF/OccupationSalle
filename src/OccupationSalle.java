@@ -1,4 +1,6 @@
 public class OccupationSalle {
+    public static String[] joursSemaine = {"LUNDI", "MARDI", "MERCREDI", "JEUDI", "VENDREDI"};
+
     public static void main(String[] args) throws InterruptedException {
         boolean[][] occupee = {
                 {false, true, true, true, false, true, true, false, true, false},
