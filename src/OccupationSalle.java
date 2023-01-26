@@ -18,6 +18,26 @@ public class OccupationSalle {
         }
     }
 
+    public static void reserverCreneau(boolean[][] creneaux) throws InterruptedException {
+        System.out.println("Entrez l'identifiant à "
+                + (chiffresPossibles(creneaux.length) + chiffresPossibles(creneaux[0].length))
+                + " chiffres du créneau à réserver (voir ci-dessous) :");
+        Thread.sleep(3000);
+        for (int i = 0; i < creneaux.length; i++) {
+            System.out.println(joursSemaine[i]);
+            for (int j = 0; j < creneaux[0].length; j++) {
+                if (!creneaux[i][j])
+                    System.out.println("\t" + i + j + " - " + afficherHoraire(i, j));
+            }
+            System.out.println();
+        }
+        String identifiant = Terminal.lireString();
+        int indexJour = Integer.parseInt(String.valueOf(identifiant.charAt(0)));
+        int indexCreneau = Integer.parseInt(String.valueOf(identifiant.charAt(1)));
+        if (creneaux[indexJour][indexCreneau])
+            throw new ReservationCreneauOccupeException();
+        creneaux[indexJour][indexCreneau] = true;
+        System.out.println("Le créneau du " + afficherHoraire(indexJour, indexCreneau) + " a été réservé.");
     }
     public static void affichageTauxOccupation(boolean[][] occupee) {
         System.out.println("Taux d'occupation : " + (calculerTauxOccupation(occupee) * 100));
