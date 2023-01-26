@@ -10,6 +10,11 @@ public class OccupationSalle {
                 {false, true, false, true, false, true, true, false, false, false}
         };
         affichageCreneaux(occupee);
+        affichageTauxOccupation(occupee);
+    }
+    public static void affichageTauxOccupation(boolean[][] occupee) {
+        System.out.println("Taux d'occupation : " + (calculerTauxOccupation(occupee) * 100));
+        System.out.println();
     }
     public static void affichageCreneaux(boolean[][] creneaux) {
         System.out.println("Affichage des crénaux de la semaine :");
