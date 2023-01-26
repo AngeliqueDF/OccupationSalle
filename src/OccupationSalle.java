@@ -33,4 +33,8 @@ public class OccupationSalle {
         return res;
     }
 
+    public static String afficherHoraire(int indexJour, int indexCreneau) {
+        return (8 + indexCreneau) + "H00 à "
+                + (8 + indexCreneau + 1) + "H00.";
+    }
 }
