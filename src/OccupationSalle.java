@@ -16,6 +16,19 @@ public class OccupationSalle {
         System.out.println("Taux d'occupation : " + (calculerTauxOccupation(occupee) * 100));
         System.out.println();
     }
+
+    public static float calculerTauxOccupation(boolean[][] creneaux) {
+        int creneauxOccupes = 0;
+        int creneauxTotaux = creneaux[0].length * creneaux.length;
+        for (int i = 0; i < creneaux.length; i++) {
+            for (int j = 0; j < creneaux[0].length; j++) {
+                if (creneaux[i][j])
+                    creneauxOccupes++;
+            }
+        }
+        return (float) creneauxOccupes / creneauxTotaux;
+    }
+
     public static void affichageCreneaux(boolean[][] creneaux) {
         System.out.println("Affichage des crénaux de la semaine :");
         for (int i = 0; i < creneaux.length; i++) {
