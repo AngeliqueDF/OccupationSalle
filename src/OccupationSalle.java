@@ -22,4 +22,15 @@ public class OccupationSalle {
         }
     }
 
+    public static String ecrireInfosCreneau(boolean occupee, int indexJour, int indexCreneau) {
+        String res = "";
+        if (occupee)
+            res += "[x] - Salle occupee ";
+        else {
+            res += "[ ] - Salle libre ";
+        }
+        res += "de " + afficherHoraire(indexJour, indexCreneau);
+        return res;
+    }
+
 }
